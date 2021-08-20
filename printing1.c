@@ -46,14 +46,3 @@ int	print_nbr(int nbr)
 	return (i);
 }
 
-int	print_unsigned(unsigned int nbr)
-{
-	char	*str;
-	int		i;
-
-	str = ft_itoa(nbr);
-	i = ft_strlen(str);
-	write(1, str, i);
-	free(str);
-	return (i);
-}

@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-char determine_type(const char *s, t_data *data)
+char 	determine_type(const char *s, t_data *data)
 {
 	s++;
 	if (*s == 'c')
@@ -41,7 +41,7 @@ void	init_arg(t_data *data, va_list args)
 		data->unsig = va_arg(args, unsigned int);
 }
 
-void call_conversion(t_data *data)
+void 	call_conversion(t_data *data)
 {
 	if (data->type == 'c')
 		data->len += print_char(data->ch);
@@ -54,14 +54,14 @@ void call_conversion(t_data *data)
 	if (data->type == 'i')
 		data->len += print_nbr(data->nbr);
 	if (data->type == 'u')
-		print_char(data->unsig);
+		data->len += print_unsigned(data->unsig);
 	if (data->type == 'x')
-		print_char(data->ch);
+		data->len += print_ptr_addrs(data->hex_ptr);
 	if (data->type == '%')
 		write(1, "%", 1);
 }
 
-int	count_args(const char *s)
+int		count_args(const char *s)
 {
 	int	i;
 
@@ -80,7 +80,7 @@ int	count_args(const char *s)
 	return (i);
 }
 
-int	write_filler(const char *s, t_data *data)
+int		write_filler(const char *s, t_data *data)
 {
 	int	i;
 
@@ -93,7 +93,7 @@ int	write_filler(const char *s, t_data *data)
 	return (i);
 }
 
-int	ft_printf(const char *s, ...)
+int		ft_printf(const char *s, ...)
 {
 	va_list	args;
 	t_data	data;

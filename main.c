@@ -13,6 +13,8 @@ int	main(void)
 	ft_printf("%p\n", n);
 	ft_printf("GER %d - %d BRA\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", santos, cor);
+	ft_printf("%%UNSIGNED INT %u\n", -1);
+	ft_printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 }
 
 //'C', 'A', 'R', 'A', 'L', 'H', 'O'
