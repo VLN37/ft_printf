@@ -9,14 +9,16 @@
 typedef struct s_data
 {
 	char			type;
+	int				argc;
+	int				len;
 	char			ch;
-	int				nbr;
 	char			*str;
 	void			*hex_ptr;
+	int				nbr;
 	unsigned int	unsig;
 }t_data;
 
 int	ft_printf(const char *s, ...);
-void print_char(char c);
+int print_char(char c);
 
 #endif

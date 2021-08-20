@@ -41,10 +41,24 @@ void	init_arg(t_data *data, va_list args)
 		data->unsig = va_arg(args, unsigned int);
 }
 
-void call_conversion(t_data data)
+void call_conversion(t_data *data)
 {
-	if (data.type == 'c')
-		print_char(data.ch);
+	if (data->type == 'c')
+		data->len += print_char(data->ch);
+	if (data->type == 's')
+		print_char(data->ch);
+	if (data->type == 'p')
+		data->len += print_char(data->ch);
+	if (data->type == 'd')
+		print_char(data->ch);
+	if (data->type == 'i')
+		print_char(data->ch);
+	if (data->type == 'u')
+		print_char(data->ch);
+	if (data->type == 'x')
+		print_char(data->ch);
+	if (data->type == '%')
+		write(1, "%", 1);
 }
 
 int	count_args(const char *s)
@@ -66,15 +80,15 @@ int	count_args(const char *s)
 	return (i);
 }
 
-int	write_filler(const char *s)
+int	write_filler(const char *s, t_data *data)
 {
 	int	i;
 
 	i = 0;
 	while(s[i] != '%' && s[i])
 		++i;
-	write(1, &s, i);
-	printf("%d", i);
+	write(1, s, i);
+	data->len += i;
 	return (i);
 }
 
@@ -82,29 +96,23 @@ int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	t_data	data;
-	int	i;
-	int	ctr;
-	int argc;
 
-	ctr = 0;
-	i = 0;
+	data.len = 0;
 	va_start(args, s);
-	argc = count_args(s);
-	while(ctr++ < argc)
+	data.argc = count_args(s);
+	while(data.argc--)
 	{
-		i = 0;
-		while(s[i] != '%' && s[i])
-			++i;
-		write(1, s, i);
-		printf("%d", i);
-		//s += write_filler(s);
-		if (s[i] == '%')
-			data.type = determine_type(&s[i], &data);
-		s += i + 2;
+		s += write_filler(s, &data);
+		if (*s == '%')
+		{
+			data.type = determine_type(s, &data);
+			s += 2;
+		}
 		init_arg(&data, args);
-		print_char(data.ch);
+		call_conversion(&data);
+		s += write_filler(s, &data);
 	}
 	va_end(args);
-	return (0);
-
+	printf("%d\n", data.len);
+	return (data.len);
 }
