@@ -56,7 +56,7 @@ void 	call_conversion(t_data *data)
 	if (data->type == 'u')
 		data->len += print_unsigned(data->unsig);
 	if (data->type == 'x')
-		data->len += print_ptr_addrs(data->hex_ptr);
+		data->len += print_hex(data->unsig);
 	if (data->type == '%')
 		write(1, "%", 1);
 }

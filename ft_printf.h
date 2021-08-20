@@ -20,6 +20,8 @@ typedef struct s_data
 }t_data;
 
 int		ft_printf(const char *s, ...);
+void	ft_bzero(void *ptr, size_t len);
+void	*ft_calloc(size_t nbr, size_t size);
 int		print_char(char c);
 int		print_string(char *str);
 int		print_ptr_addrs(void *ptr);
@@ -33,5 +35,7 @@ char	*ft_itoa(int nbr);
 int		print_nbr(int nbr);
 int		print_unsigned(unsigned int nbr);
 char	*ft_unsigned_itoa(unsigned int nbr);
+size_t	ft_strlen(const char *str);
+int		print_hex(unsigned int nbr);
 
 #endif
