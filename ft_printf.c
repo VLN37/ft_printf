@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 
 char determine_type(const char *s, t_data *data)
 {
@@ -87,6 +87,7 @@ int	write_filler(const char *s, t_data *data)
 	i = 0;
 	while(s[i] != '%' && s[i])
 		++i;
+	//ft_putnbr_fd(i, 1);
 	write(1, s, i);
 	data->len += i;
 	return (i);
@@ -110,9 +111,9 @@ int	ft_printf(const char *s, ...)
 		}
 		init_arg(&data, args);
 		call_conversion(&data);
-		s += write_filler(s, &data);
 	}
+	s += write_filler(s, &data);
 	va_end(args);
-	printf("%d\n", data.len);
+	//printf("%d\n", data.len);
 	return (data.len);
 }

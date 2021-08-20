@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "printf.h"
+#include "ft_printf.h"
 
 int	add_numbers(int n, ...)
 {

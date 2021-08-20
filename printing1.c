@@ -1,4 +1,5 @@
-#include "printf.h"
+#include "ft_printf.h"
+#include "libft.h"
 
 int	print_char(char c)
 {
@@ -6,11 +7,29 @@ int	print_char(char c)
 	return (1);
 }
 
-int	print_string(char *str)
+int		print_string(char *str)
 {
-	int	i;
+	size_t	i;
 
+	i = 0;
 	i = ft_strlen(str);
 	write(1, str, i);
 	return (i);
 }
+
+// int	print_ptr_addrs(void *ptr)
+// {
+// 	char			*str;
+// 	unsigned long	i;
+
+// 	i = (unsigned long)&ptr;
+// 	str = (char *)malloc(15);
+// 	str = itoa_base(i, "0123456789abcdef", str, 16);
+// 	if(!*str)
+// 		write(1, "0", 1);
+// 	else
+// 		write(1, str, 14);
+// 	i = ft_strlen(str);
+// 	free(str);
+// 	return(i);
+// }
