@@ -29,5 +29,8 @@ void	call_conversion(t_data *data);
 int		count_args(const char *s);
 int		write_filler(const char *s, t_data *data);
 int		print_string(char *str);
+char	*ft_itoa(int nbr);
+int		print_nbr(int nbr);
+int	print_unsigned(unsigned int nbr);
 
 #endif

@@ -3,12 +3,16 @@
 int	main(void)
 {
 	int	n;
-	// char *str = "hello";
-	// printf("%zu\n", ft_strlen(str));
-	ft_printf("123 %c %c %c %c %c\n", 'P', 'R', 'I', 'N', 'T');
+	int brazil = 1;
+	int alemanha = 7;
+	int santos = 4;
+	int cor = 2;
+	ft_printf("123 %c %c %c %c %c", 'P', 'R', 'I', 'N', 'T');
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
 	ft_printf("%p\n", n);
+	ft_printf("GER %d - %d BRA\n", alemanha, brazil);
+	ft_printf("SAN %i - %i COR\n", santos, cor);
 }
 
 //'C', 'A', 'R', 'A', 'L', 'H', 'O'

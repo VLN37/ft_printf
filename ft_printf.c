@@ -48,13 +48,13 @@ void call_conversion(t_data *data)
 	if (data->type == 's')
 		data->len += print_string(data->str);
 	if (data->type == 'p')
-		data->len += print_char(data->ch);
+		data->len += print_ptr_addrs(data->hex_ptr);
 	if (data->type == 'd')
-		print_char(data->ch);
+		data->len += print_nbr(data->nbr);
 	if (data->type == 'i')
-		print_char(data->ch);
+		data->len += print_nbr(data->nbr);
 	if (data->type == 'u')
-		print_char(data->ch);
+		print_char(data->unsig);
 	if (data->type == 'x')
 		print_char(data->ch);
 	if (data->type == '%')

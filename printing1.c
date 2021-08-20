@@ -17,19 +17,43 @@ int		print_string(char *str)
 	return (i);
 }
 
-// int	print_ptr_addrs(void *ptr)
-// {
-// 	char			*str;
-// 	unsigned long	i;
+int	print_ptr_addrs(void *ptr)
+{
+	char			*str;
+	unsigned long	i;
 
-// 	i = (unsigned long)&ptr;
-// 	str = (char *)malloc(15);
-// 	str = itoa_base(i, "0123456789abcdef", str, 16);
-// 	if(!*str)
-// 		write(1, "0", 1);
-// 	else
-// 		write(1, str, 14);
-// 	i = ft_strlen(str);
-// 	free(str);
-// 	return(i);
-// }
+	i = (unsigned long)&ptr;
+	str = (char *)malloc(15);
+	str = itoa_base(i, "0123456789abcdef", str, 16);
+	if(!*str)
+		write(1, "0", 1);
+	else
+		write(1, str, 14);
+	i = ft_strlen(str);
+	free(str);
+	return(i);
+}
+
+int	print_nbr(int nbr)
+{
+	char	*str;
+	int		i;
+
+	str = ft_itoa(nbr);
+	i = ft_strlen(str);
+	write(1, str, i);
+	free (str);
+	return (i);
+}
+
+int	print_unsigned(unsigned int nbr)
+{
+	char	*str;
+	int		i;
+
+	str = ft_itoa(nbr);
+	i = ft_strlen(str);
+	write(1, str, i);
+	free(str);
+	return (i);
+}
