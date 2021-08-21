@@ -12,6 +12,7 @@ int	main(void)
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
 	ft_printf("%p\n", n);
+	printf("%p\n", &n);
 	ft_printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", whilezera, welton);
 	ft_printf("%%UNSIGNED INT %u\n", -1);

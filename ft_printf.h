@@ -25,7 +25,7 @@ void	*ft_calloc(size_t nbr, size_t size);
 int		print_char(char c);
 int		print_string(char *str);
 int		print_ptr_addrs(void *ptr);
-char	*itoa_base(unsigned long nbr, char *base_to, char *str, int basesize);
+char	*itoa_base(unsigned long nbr, char *base_to, int basesize);
 char	determine_type(const char *s, t_data *data);
 void	call_conversion(t_data *data);
 int		count_args(const char *s);
