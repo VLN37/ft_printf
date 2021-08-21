@@ -11,12 +11,18 @@ int	main(void)
 	ft_printf("123 %c %c %c %c %c", 'P', 'R', 'I', 'N', 'T');
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
-	ft_printf("%p\n", n);
-	printf("%p\n", &n);
+	printf("%s", "SECOND BASE\n");
+	ft_printf("Void Pointer: %p\n", &n);
+	printf("Void Pointer: %p\n", &n);
 	ft_printf("WHILE %d - %d WELTON\n", alemanha, brazil);
+	printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", whilezera, welton);
-	ft_printf("%%UNSIGNED INT %u\n", -1);
+	printf("SAN %i - %i COR\n", whilezera, welton);
+	ft_printf("%%UNSIGNED INT %u\n", 12345);
+	printf("%%UNSIGNED INT %u\n", 12345);
 	ft_printf("UNSIGNED TO HEXA: %x\n", 1233454523);
+	printf("UNSIGNED TO HEXA: %x\n", 1233454523);
+
 
 }
 

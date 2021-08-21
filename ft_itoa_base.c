@@ -18,7 +18,7 @@ static void	ft_reverse_string(char *tab)
 	}
 }
 
-static int count_numbers(unsigned long nbr, int basesize)
+static int	count_numbers(unsigned long nbr, int basesize)
 {
 	int	i;
 
@@ -30,6 +30,7 @@ static int count_numbers(unsigned long nbr, int basesize)
 		nbr = nbr / basesize;
 		i++;
 	}
+	return (i);
 }
 
 char	*itoa_base(unsigned long nbr, char *base_to, int basesize)
@@ -40,7 +41,7 @@ char	*itoa_base(unsigned long nbr, char *base_to, int basesize)
 	int	size_str;
 
 	size_str = count_numbers(nbr, basesize);
-	res = (char *)ft_calloc(size_str + 1, sizeof(char));
+	res = (char *)ft_calloc(size_str + 3, sizeof(char));
 	i = 0;
 	if (nbr == 0)
 	{
@@ -55,6 +56,8 @@ char	*itoa_base(unsigned long nbr, char *base_to, int basesize)
 	}
 	if (sign == -1)
 		res[i] = '-';
+	res[i++] = 'x';
+	res[i++] = '0';
 	ft_reverse_string(res);
 	return (res);
 }

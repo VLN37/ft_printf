@@ -29,9 +29,6 @@ int	print_ptr_addrs(void *ptr)
 	else
 		write(1, str, 14);
 	i = ft_strlen(str);
-	str[i++] = 'x';
-	str[i++] = '0';
-	str[i] = '\0';
 	free(str);
 	return(i);
 }
@@ -41,13 +38,12 @@ int	print_hex(unsigned int nbr)
 	char			*str;
 	unsigned long	i;
 
-	i = nbr;
-	str = (char *)malloc(15);
-	str = itoa_base((unsigned long)i, "0123456789abcdef", 16);
+
+	str = itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 	if(!*str)
 		write(1, "0", 1);
 	else
-		write(1, str, 14);
+		write(1, &str[2], ft_strlen(str) - 2);
 	i = ft_strlen(str);
 	free(str);
 	return(i);

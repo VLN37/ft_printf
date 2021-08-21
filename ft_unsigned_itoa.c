@@ -19,13 +19,14 @@ static void	unsigned_setvariables(unsigned int nbr, int *sign, int *size_str)
 		nbr = nbr / 10;
 		i++;
 	}
-	*size_str = *size_str + i + 1;
+	*size_str = *size_str + i;
 }
 
 static void	unsigned_putnbr(unsigned int nbr, char *res, int *sign)
 {
 	int	i;
 
+	i = 0;
 	if (nbr == 0)
 		res[i++] = '0';
 	while (nbr != 0)
@@ -63,7 +64,7 @@ char	*ft_unsigned_itoa(unsigned int nbr)
 
 	sign = 1;
 	unsigned_setvariables(nbr, &sign, &size_str);
-	res = (char *)ft_calloc(size_str, sizeof(char));
+	res = (char *)ft_calloc(size_str + 1, sizeof(char));
 	if (!res)
 		return (NULL);
 	unsigned_putnbr(nbr, res, &sign);
