@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ftprintf.h"
+#include "ft_printf.h"
 #include "libft.h"
 
 // int ft_printf(const char *s, ...)

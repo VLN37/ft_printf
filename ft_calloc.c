@@ -6,11 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:06:02 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 04:11:28 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 04:18:26 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ftprintf.h"
+#include "ft_printf.h"
 
 /**
  * @brief Initializes a block of memory of 'nbr' elements of 'size' bytes,fills

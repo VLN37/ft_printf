@@ -1,4 +1,4 @@
-#include "ftprintf.h"
+#include "ft_printf.h"
 
 static void	setvariables(int nbr, int *sign, int *size_str)
 {

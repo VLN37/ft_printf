@@ -1,4 +1,4 @@
-#include "ftprintf.h"
+#include "ft_printf.h"
 #include "libft.h"
 
 static void	ft_reverse_string(char *tab)
