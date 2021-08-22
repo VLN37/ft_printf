@@ -22,8 +22,8 @@ int	main(void)
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
 	printf("%s", "SECOND BASE\n");
-	n = ft_printf("Void Pointer: %p\n", &n);
-	n = printf("Void Pointer: %p\n", &n);
+	ft_printf("Void Pointer: %p\n", NULL);
+	printf("Void Pointer: %p\n", NULL);
 	ft_printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", whilezera, welton);

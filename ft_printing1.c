@@ -23,11 +23,11 @@ int	print_ptr_addrs(void *ptr)
 	unsigned long	i;
 
 	i = (unsigned long)ptr;
-	if (!ptr)
-	{
-		write(1, "(nil)", 5);
-		return (5);
-	}
+	// if (!ptr)
+	// {
+	// 	write(1, "(nil)", 5);
+	// 	return (5);
+	// }
 	str = itoa_base(i, "0123456789abcdef", 16);
 	if(!*str)
 	{
