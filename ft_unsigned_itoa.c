@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/22 04:48:56 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/08/22 04:49:17 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static void	unsigned_setvariables(unsigned int nbr, int *sign, int *size_str)
@@ -71,4 +83,3 @@ char	*ft_unsigned_itoa(unsigned int nbr)
 	unsigned_reverse_string(res);
 	return (res);
 }
-

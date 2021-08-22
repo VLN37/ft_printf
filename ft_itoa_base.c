@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/22 04:46:19 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/08/22 04:46:53 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "libft.h"
 
@@ -5,7 +17,7 @@ static void	ft_reverse_string(char *tab)
 {
 	int	counter;
 	int	buffer;
-	int size;
+	int	size;
 
 	size = ft_strlen(tab);
 	counter = 0;
@@ -35,10 +47,10 @@ static int	count_numbers(unsigned long nbr, int basesize)
 
 char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 {
-	int	sign;
-	int	i;
-	char *res;
-	int	size_str;
+	int		sign;
+	int		i;
+	char	*res;
+	int		size_str;
 
 	size_str = count_numbers(nbr, basesize);
 	res = (char *)ft_calloc(size_str + 25, sizeof(char));
@@ -56,4 +68,3 @@ char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 	ft_reverse_string(res);
 	return (res);
 }
-

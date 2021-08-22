@@ -1,11 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/22 04:42:22 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/08/22 04:45:42 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static void ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-char 	determine_type(const char *s, t_data *data)
+char	determine_type(const char *s, t_data *data)
 {
 	s++;
 	if (*s == 'c')
@@ -22,7 +29,7 @@ char 	determine_type(const char *s, t_data *data)
 		return ('u');
 	else if (*s == 'x')
 		return ('x');
-	else if(*s == 'X')
+	else if (*s == 'X')
 		return ('X');
 	else if (*s == '%')
 		return ('%');
@@ -46,13 +53,13 @@ void	init_arg(t_data *data, va_list args)
 		data->unsig = va_arg(args, unsigned int);
 	else if (data->type == 'x')
 		data->unsig = va_arg(args, unsigned int);
-	else if(data->type == 'X')
+	else if (data->type == 'X')
 		data->unsig = va_arg(args, unsigned int);
 	else
 		data->ch = va_arg(args, int);
 }
 
-void 	call_conversion(t_data *data)
+void	call_conversion(t_data *data)
 {
 	if (data->type == 'c')
 		data->len += print_char(data->ch);
@@ -77,12 +84,11 @@ void 	call_conversion(t_data *data)
 	}
 }
 
-int		count_args(const char *s)
+int	count_args(const char *s)
 {
 	int	i;
 
 	i = 0;
-
 	while (*s)
 	{
 		if (*s == '%')
@@ -95,20 +101,19 @@ int		count_args(const char *s)
 	return (i);
 }
 
-int		write_filler(const char *s, t_data *data)
+int	write_filler(const char *s, t_data *data)
 {
 	int	i;
 
 	i = 0;
-	while(s[i] != '%' && s[i])
+	while (s[i] != '%' && s[i])
 		++i;
-	//ft_putnbr_fd(i, 1);
 	write(1, s, i);
 	data->len += i;
 	return (i);
 }
 
-int		ft_printf(const char *s, ...)
+int	ft_printf(const char *s, ...)
 {
 	va_list	args;
 	t_data	data;
@@ -116,7 +121,7 @@ int		ft_printf(const char *s, ...)
 	data.len = 0;
 	va_start(args, s);
 	data.argc = count_args(s);
-	while(data.argc--)
+	while (data.argc--)
 	{
 		s += write_filler(s, &data);
 		if (*s == '%')
