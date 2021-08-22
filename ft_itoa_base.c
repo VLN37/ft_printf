@@ -6,12 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:19 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 04:46:53 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 20:03:10 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 static void	ft_reverse_string(char *tab)
 {
@@ -36,7 +35,7 @@ static int	count_numbers(unsigned long nbr, int basesize)
 
 	i = 0;
 	if (!nbr)
-		return (i + 1);
+		return (1);
 	while (nbr)
 	{
 		nbr = nbr / basesize;
@@ -53,7 +52,7 @@ char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 	int		size_str;
 
 	size_str = count_numbers(nbr, basesize);
-	res = (char *)ft_calloc(size_str + 25, sizeof(char));
+	res = (char *)malloc(size_str + 3 * sizeof(char));
 	i = 0;
 	if (nbr == 0)
 		res[i++] = base_to[0];
@@ -65,6 +64,7 @@ char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 	}
 	res[i++] = 'x';
 	res[i++] = '0';
+	res[i++] = '\0';
 	ft_reverse_string(res);
 	return (res);
 }

@@ -1,6 +1,6 @@
 SRCS		= ft_itoa.c ft_itoa_base.c ft_printf.c ft_unsigned_itoa.c \
-              ft_itoa.c ft_printing1.c ft_strlen.c ft_calloc.c \
-              ft_itoa.c ft_bzero.c ft_toupper.c \
+              ft_itoa.c ft_printing1.c ft_strlen.c \
+              ft_itoa.c ft_toupper.c \
 
 LIB			= libft.a
 CC			= clang

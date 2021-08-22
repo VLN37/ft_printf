@@ -28,8 +28,8 @@ int	main(void)
 	printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", whilezera, welton);
 	printf("SAN %i - %i COR\n", whilezera, welton);
-	ft_printf("%%UNSIGNED INT %u\n", 12345);
-	printf("%%UNSIGNED INT %u\n", 12345);
+	ft_printf("%%UNSIGNED INT %u\n", 2147483647);
+	printf("%%UNSIGNED INT %u\n", 2147483647);;
 	ft_printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 	printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 	ft_printf("UNSIGNED TO HEXA: %X\n", 1233454523);

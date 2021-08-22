@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:24 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 04:46:25 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 19:52:32 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ static void	putnbr(int nbr, char *res, int *sign)
 		nbr = nbr / 10;
 	}
 	if (*sign == -1)
-		res[i] = '-';
+		res[i++] = '-';
+	res[i] = '\0';
 }
 
 static void	reverse_string(char *tab)
@@ -87,8 +88,9 @@ char	*ft_itoa(int nbr)
 	char	*res;
 
 	sign = 1;
+	size_str = 0;
 	setvariables(nbr, &sign, &size_str);
-	res = (char *)ft_calloc(size_str, sizeof(char));
+	res = (char *)malloc(size_str + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
 	putnbr(nbr, res, &sign);

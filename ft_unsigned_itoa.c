@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:48:56 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 04:49:17 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 19:54:00 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ static void	unsigned_putnbr(unsigned int nbr, char *res, int *sign)
 		nbr = nbr / 10;
 	}
 	if (*sign == -1)
-		res[i] = '-';
+		res[i++] = '-';
+	res[i] = '\0';
 }
 
 static void	unsigned_reverse_string(char *tab)
@@ -76,7 +77,7 @@ char	*ft_unsigned_itoa(unsigned int nbr)
 
 	sign = 1;
 	unsigned_setvariables(nbr, &sign, &size_str);
-	res = (char *)ft_calloc(size_str + 1, sizeof(char));
+	res = (char *)malloc(size_str + 1 * sizeof(char));
 	if (!res)
 		return (NULL);
 	unsigned_putnbr(nbr, res, &sign);
