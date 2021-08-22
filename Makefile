@@ -1,5 +1,5 @@
-SRCS		= ft_itoa.c ft_itoa_base.c ft_printf.c ft_unsigned_itoa.c \
-              ft_itoa.c ft_printing1.c ft_strlen.c \
+SRCS		= ft_itoa.c ft_itoa_base.c ft_printf.c ft_itoa_unsigned.c \
+              ft_itoa.c ft_printerf.c ft_strlen.c \
               ft_itoa.c ft_toupper.c \
 
 LIB			= libft.a

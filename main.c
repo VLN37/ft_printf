@@ -1,19 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/22 20:20:22 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/08/22 20:22:13 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	main(void)
 {
-	int	n;
-	int brazil = 1;
-	int alemanha = 7;
-	int whilezera = 5;
-	int welton = 2;
+	int		n;
+	int		brazil = 1;
+	int		alemanha = 7;
+	int		whilezera = 5;
+	int		welton = 2;
+	char	*str1 = "while monstro";
+	char	*str2 = "wut";
 	unsigned long i = (unsigned long)&n;
 	unsigned long long j = (unsigned long long)&n;
 
 	setbuf(stdout, NULL);
-	//printf("Int addrs of N: %ld\n", i);
-	char *str1 = "while monstro";
-	char *str2 = "wut";
 	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 	ft_printf(" %% %%%s%% ", str2);
 	//printf(" %% %%%s%% ", str2);

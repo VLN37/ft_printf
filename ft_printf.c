@@ -6,38 +6,38 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:42:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 04:45:42 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 20:36:37 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	determine_type(const char *s, t_data *data)
-{
-	s++;
-	if (*s == 'c')
-		return ('c');
-	else if (*s == 'd')
-		return ('d');
-	else if (*s == 'p')
-		return ('p');
-	else if (*s == 's')
-		return ('s');
-	else if (*s == 'i')
-		return ('i');
-	else if (*s == 'u')
-		return ('u');
-	else if (*s == 'x')
-		return ('x');
-	else if (*s == 'X')
-		return ('X');
-	else if (*s == '%')
-		return ('%');
-	else
-		return (0);
-}
+// static char	determine_type(const char *s, t_data *data)
+// {
+// 	s++;
+// 	if (*s == 'c')
+// 		return ('c');
+// 	else if (*s == 'd')
+// 		return ('d');
+// 	else if (*s == 'p')
+// 		return ('p');
+// 	else if (*s == 's')
+// 		return ('s');
+// 	else if (*s == 'i')
+// 		return ('i');
+// 	else if (*s == 'u')
+// 		return ('u');
+// 	else if (*s == 'x')
+// 		return ('x');
+// 	else if (*s == 'X')
+// 		return ('X');
+// 	else if (*s == '%')
+// 		return ('%');
+// 	else
+// 		return (0);
+// }
 
-void	init_arg(t_data *data, va_list args)
+static void	init_arg(t_data *data, va_list args)
 {
 	if (data->type == 'c')
 		data->ch = va_arg(args, int);
@@ -59,10 +59,13 @@ void	init_arg(t_data *data, va_list args)
 		data->ch = va_arg(args, int);
 }
 
-void	call_conversion(t_data *data)
+static void	call_conversion(t_data *data)
 {
 	if (data->type == 'c')
-		data->len += print_char(data->ch);
+	{
+		data->len += 1;
+		write(1, &data->ch, 1);
+	}
 	if (data->type == 's')
 		data->len += print_string(data->str);
 	if (data->type == 'p')
@@ -74,9 +77,9 @@ void	call_conversion(t_data *data)
 	if (data->type == 'u')
 		data->len += print_unsigned(data->unsig);
 	if (data->type == 'x')
-		data->len += print_hex(data->unsig, 0);
+		data->len += print_unsigned_hex(data->unsig, 0);
 	if (data->type == 'X')
-		data->len += print_hex(data->unsig, 1);
+		data->len += print_unsigned_hex(data->unsig, 1);
 	if (data->type == '%')
 	{
 		data->len += 1;
@@ -84,7 +87,7 @@ void	call_conversion(t_data *data)
 	}
 }
 
-int	count_args(const char *s)
+static int	count_args(const char *s)
 {
 	int	i;
 
@@ -101,7 +104,7 @@ int	count_args(const char *s)
 	return (i);
 }
 
-int	write_filler(const char *s, t_data *data)
+static int	write_filler(const char *s, t_data *data)
 {
 	int	i;
 
@@ -126,7 +129,7 @@ int	ft_printf(const char *s, ...)
 		s += write_filler(s, &data);
 		if (*s == '%')
 		{
-			data.type = determine_type(s, &data);
+			data.type = *(s + 1);
 			s += 2;
 		}
 		if (data.type != '%')

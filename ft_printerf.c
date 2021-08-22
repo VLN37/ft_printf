@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printing1.c                                     :+:      :+:    :+:   */
+/*   ft_printerf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 20:03:20 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 20:36:37 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_char(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+// int	print_char(char c)
+// {
+// 	write(1, &c, 1);
+// 	return (1);
+// }
 
 int	print_string(char *str)
 {
@@ -34,7 +34,7 @@ int	print_ptr_addrs(void *ptr)
 	unsigned long	i;
 
 	i = (unsigned long)ptr;
-	str = itoa_base(i, "0123456789abcdef", 16);
+	str = ft_itoa_base(i, "0123456789abcdef", 16);
 	if (!*str)
 	{
 		write(1, "0", 1);
@@ -52,20 +52,20 @@ int	print_unsigned(unsigned int nbr)
 	char	*str;
 	int		i;
 
-	str = ft_unsigned_itoa(nbr);
+	str = ft_itoa_unsigned(nbr);
 	i = ft_strlen(str);
 	write(1, str, i);
 	free(str);
 	return (i);
 }
 
-int	print_hex(unsigned int nbr, int unsigflag)
+int	print_unsigned_hex(unsigned int nbr, int unsigflag)
 {
 	char			*str;
 	unsigned long	i;
 
 	i = -1;
-	str = itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
+	str = ft_itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 	if (unsigflag == 1)
 		while (str[++i])
 			str[i] = ft_toupper(str[i]);
@@ -75,13 +75,13 @@ int	print_hex(unsigned int nbr, int unsigflag)
 	return (i);
 }
 
-// int	print_hex(unsigned int nbr, int unsigflag)
+// int	print_unsigned_hex(unsigned int nbr, int unsigflag)
 // {
 // 	char			*str;
 // 	unsigned long	i;
 
 // 	i = -1;
-// 	str = itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
+// 	str = ft_itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 // 	if (unsigflag == 1)
 // 		while (str[++i])
 // 			str[i] = ft_toupper(str[i]);

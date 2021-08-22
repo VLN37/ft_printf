@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned_itoa.c                                 :+:      :+:    :+:   */
+/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:48:56 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 19:54:00 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 20:16:05 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	unsigned_reverse_string(char *tab)
 	}
 }
 
-char	*ft_unsigned_itoa(unsigned int nbr)
+char	*ft_itoa_unsigned(unsigned int nbr)
 {
 	int		size_str;
 	int		sign;
