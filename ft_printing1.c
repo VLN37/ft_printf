@@ -22,15 +22,33 @@ int	print_ptr_addrs(void *ptr)
 	char			*str;
 	unsigned long	i;
 
+	printf("received address: %p\n", &ptr);
+	printf("received addrs in ld: %ld\n", (unsigned long)&ptr);
+
 	i = (unsigned long)&ptr;
 	str = itoa_base(i, "0123456789abcdef", 16);
 	if(!*str)
+	{
 		write(1, "0", 1);
+		return (1);
+	}
 	else
 		write(1, str, 14);
 	i = ft_strlen(str);
 	free(str);
 	return(i);
+}
+
+int	print_unsigned(unsigned int nbr)
+{
+	char	*str;
+	int		i;
+
+	str = ft_unsigned_itoa(nbr);
+	i = ft_strlen(str);
+	write(1, str, i);
+	free(str);
+	return (i);
 }
 
 int	print_hex(unsigned int nbr)
@@ -41,10 +59,13 @@ int	print_hex(unsigned int nbr)
 
 	str = itoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 	if(!*str)
+	{
 		write(1, "0", 1);
+		return (1);
+	}
 	else
 		write(1, &str[2], ft_strlen(str) - 2);
-	i = ft_strlen(str);
+	i = ft_strlen(str) - 2;
 	free(str);
 	return(i);
 }

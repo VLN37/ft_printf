@@ -7,7 +7,17 @@ int	main(void)
 	int alemanha = 7;
 	int whilezera = 5;
 	int welton = 2;
-	char *str = "while monstro";
+	unsigned long i = (unsigned long)&n;
+	unsigned long long j = (unsigned long long)&n;
+
+	setbuf(stdout, NULL);
+	//printf("Int addrs of N: %ld\n", i);
+	char *str1 = "while monstro";
+	char *str2 = "wut";
+	//ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	ft_printf(" %% %%%s%% ", str2);
+	//printf(" %% %%%s%% ", str2);
+	ft_printf("\n");
 	ft_printf("123 %c %c %c %c %c", 'P', 'R', 'I', 'N', 'T');
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
@@ -23,7 +33,10 @@ int	main(void)
 	ft_printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 	printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 
-
+	printf("\n\n\n\n\n\n\n\n");
+	printf("printf expected address: %p\n",&n);
+	setbuf(stdout, NULL);
+	ft_printf("\n\n%p\n\n", &n);
 }
 
 //'C', 'A', 'R', 'A', 'L', 'H', 'O'

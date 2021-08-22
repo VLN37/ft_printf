@@ -72,14 +72,3 @@ char	*ft_unsigned_itoa(unsigned int nbr)
 	return (res);
 }
 
-int	print_unsigned(unsigned int nbr)
-{
-	char	*str;
-	int		i;
-
-	str = ft_unsigned_itoa(nbr);
-	i = ft_strlen(str);
-	write(1, str, i);
-	free(str);
-	return (i);
-}
