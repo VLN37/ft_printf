@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "ftprintf.h"
 #include "libft.h"
 
 static void	ft_reverse_string(char *tab)
@@ -47,8 +47,6 @@ char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 		res[i++] = base_to[0];
 	while (nbr)
 	{
-		//printf("%lu  ", nbr);
-		//printf("%lu\n", nbr % basesize);
 		res[i] = base_to[nbr % basesize];
 		i++;
 		nbr = nbr / basesize;
@@ -58,5 +56,4 @@ char	*itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 	ft_reverse_string(res);
 	return (res);
 }
-//"0123456789abcdef"
-//140723083462336
+

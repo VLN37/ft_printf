@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 static void ft_putchar(char c)
 {
@@ -22,6 +22,8 @@ char 	determine_type(const char *s, t_data *data)
 		return ('u');
 	else if (*s == 'x')
 		return ('x');
+	else if(*s == 'X')
+		return ('X');
 	else if (*s == '%')
 		return ('%');
 	else
@@ -44,6 +46,8 @@ void	init_arg(t_data *data, va_list args)
 		data->unsig = va_arg(args, unsigned int);
 	else if (data->type == 'x')
 		data->unsig = va_arg(args, unsigned int);
+	else if(data->type == 'X')
+		data->unsig = va_arg(args, unsigned int);
 	else
 		data->ch = va_arg(args, int);
 }
@@ -63,7 +67,9 @@ void 	call_conversion(t_data *data)
 	if (data->type == 'u')
 		data->len += print_unsigned(data->unsig);
 	if (data->type == 'x')
-		data->len += print_hex(data->unsig);
+		data->len += print_hex(data->unsig, 0);
+	if (data->type == 'X')
+		data->len += print_hex(data->unsig, 1);
 	if (data->type == '%')
 	{
 		data->len += 1;
@@ -85,10 +91,7 @@ int		count_args(const char *s)
 			s++;
 		}
 		s++;
-		// if (*s == '%')
-		// 	s++;
 	}
-	//printf("%d", i);
 	return (i);
 }
 
@@ -127,6 +130,5 @@ int		ft_printf(const char *s, ...)
 	}
 	s += write_filler(s, &data);
 	va_end(args);
-	//printf("%d\n", data.len);
 	return (data.len);
 }

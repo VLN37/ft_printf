@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 void	ft_reverse_string(char *tab);
 char	*itoa_base(unsigned long nbr, char *base_to, char *str, int basesize);

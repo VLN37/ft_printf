@@ -1,4 +1,4 @@
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 int	main(void)
 {
@@ -14,7 +14,7 @@ int	main(void)
 	//printf("Int addrs of N: %ld\n", i);
 	char *str1 = "while monstro";
 	char *str2 = "wut";
-	//ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
+	ft_printf("%%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %%%c%%%s%%%d%%%i%%%u%%%x%%%X%%%% %c%%", 'A', "42", 42, 42 ,42 , 42, 42, 'B', "-42", -42, -42 ,-42 ,-42, 42, 'C', "0", 0, 0 ,0 ,0, 42, 0);
 	ft_printf(" %% %%%s%% ", str2);
 	//printf(" %% %%%s%% ", str2);
 	ft_printf("\n");
@@ -22,8 +22,8 @@ int	main(void)
 	ft_printf("\n");
 	ft_printf("%s", "SECOND BASE\n");
 	printf("%s", "SECOND BASE\n");
-	ft_printf("Void Pointer: %p\n", &n);
-	printf("Void Pointer: %p\n", &n);
+	n = ft_printf("Void Pointer: %p\n", &n);
+	n = printf("Void Pointer: %p\n", &n);
 	ft_printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	printf("WHILE %d - %d WELTON\n", alemanha, brazil);
 	ft_printf("SAN %i - %i COR\n", whilezera, welton);
@@ -32,11 +32,8 @@ int	main(void)
 	printf("%%UNSIGNED INT %u\n", 12345);
 	ft_printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 	printf("UNSIGNED TO HEXA: %x\n", 1233454523);
-
-	printf("\n\n\n\n\n\n\n\n");
-	printf("printf expected address: %p\n",&n);
-	setbuf(stdout, NULL);
-	ft_printf("\n\n%p\n\n", &n);
+	ft_printf("UNSIGNED TO HEXA: %X\n", 1233454523);
+	printf("UNSIGNED TO HEXA: %X\n", 1233454523);
 }
 
 //'C', 'A', 'R', 'A', 'L', 'H', 'O'

@@ -6,11 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 11:46:24 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/20 19:08:18 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 04:11:28 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 /**
  * @brief returns how many bytes the string has before a NULL byte

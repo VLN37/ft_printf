@@ -6,11 +6,11 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 10:05:30 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/20 19:09:32 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/22 04:11:28 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ftprintf.h"
 
 /**
  * @brief receives an address and fills it with NULL values
