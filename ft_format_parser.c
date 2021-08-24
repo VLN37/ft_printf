@@ -23,7 +23,7 @@ void init_flags(t_data *data)
 	data->hashflag = 0;
 }
 
-char	format_parser(char *s, t_data *data)
+char	format_parser(const char *s, t_data *data)
 {
 	int	i;
 

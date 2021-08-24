@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:42:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/23 21:42:16 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/23 22:23:35 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,15 @@ static void	call_conversion(t_data *data)
 	if (data->type == 'p')
 		data->len += print_ptr_addrs(data->hex_ptr);
 	if (data->type == 'd')
-		data->len += print_nbr(data->nbr);
+		data->len += print_nbr(data->nbr, data);
 	if (data->type == 'i')
-		data->len += print_nbr(data->nbr);
+		data->len += print_nbr(data->nbr, data);
 	if (data->type == 'u')
-		data->len += print_unsigned(data->unsig);
+		data->len += print_unsigned(data->unsig, data);
 	if (data->type == 'x')
-		data->len += print_unsigned_hex(data->unsig, 0);
+		data->len += print_unsigned_hex(data->unsig, 0, data);
 	if (data->type == 'X')
-		data->len += print_unsigned_hex(data->unsig, 1);
+		data->len += print_unsigned_hex(data->unsig, 1, data);
 	if (data->type == '%')
 	{
 		data->len += 1;

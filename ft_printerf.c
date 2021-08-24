@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/22 20:36:37 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/23 22:52:51 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	print_ptr_addrs(void *ptr)
 	return (i);
 }
 
-int	print_unsigned(unsigned int nbr)
+int	print_unsigned(unsigned int nbr, t_data *data)
 {
 	char	*str;
 	int		i;
@@ -59,7 +59,7 @@ int	print_unsigned(unsigned int nbr)
 	return (i);
 }
 
-int	print_unsigned_hex(unsigned int nbr, int unsigflag)
+int	print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data)
 {
 	char			*str;
 	unsigned long	i;
@@ -69,9 +69,18 @@ int	print_unsigned_hex(unsigned int nbr, int unsigflag)
 	if (unsigflag == 1)
 		while (str[++i])
 			str[i] = ft_toupper(str[i]);
-	write(1, &str[2], ft_strlen(str) - 2);
-	i = ft_strlen(str) - 2;
-	free(str);
+	if (data->hashflag)
+	{
+		write(1, str, ft_strlen(str));
+		i = ft_strlen(str);
+		free(str);
+	}
+	else
+	{
+		write(1, &str[2], ft_strlen(str) - 2);
+		i = ft_strlen(str) - 2;
+		free(str);
+	}
 	return (i);
 }
 
@@ -98,14 +107,24 @@ int	print_unsigned_hex(unsigned int nbr, int unsigflag)
 // 	return (i);
 // }
 
-int	print_nbr(int nbr)
+int	print_nbr(int nbr, t_data *data)
 {
 	char	*str;
 	int		i;
 
 	str = ft_itoa(nbr);
 	i = ft_strlen(str);
-	write(1, str, i);
+	if (data->plusflag && nbr >= 0)
+	{
+		write(1, "+", 1);
+		i++;
+	}
+	else if (data->spaceflag && nbr >= 0)
+	{
+		write(1, " ", 1);
+		i++;
+	}
+	write(1, str, ft_strlen(str));
 	free (str);
 	return (i);
 }

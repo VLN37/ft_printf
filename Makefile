@@ -14,6 +14,8 @@ all:		${NAME}
 ${NAME}:	${OBJ}
 			${AR} ${ARFLAGS} ${NAME} ${OBJ}
 
+bonus:		${NAME}
+
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 

@@ -26,14 +26,14 @@ typedef struct s_data
 //controller
 int		ft_printf(const char *s, ...);
 void	init_flags(t_data *data);
-char	format_parser(char *s, t_data *data);
+char	format_parser(const char *s, t_data *data);
 
 //printers
 int		print_string(char *str);
 int		print_ptr_addrs(void *ptr);
-int		print_nbr(int nbr);
-int		print_unsigned(unsigned int nbr);
-int		print_unsigned_hex(unsigned int nbr, int unsigflag);
+int		print_nbr(int nbr, t_data *data);
+int		print_unsigned(unsigned int nbr, t_data *data);
+int		print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data);
 
 //converters
 char	*ft_itoa_unsigned(unsigned int nbr);
