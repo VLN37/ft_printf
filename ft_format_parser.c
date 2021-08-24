@@ -14,7 +14,7 @@ static int	isconverter(char c, char *set)
 	return (0);
 }
 
-void init_flags(t_data *data)
+void	init_flags(t_data *data)
 {
 	data->offset = 0;
 	data->spaceflag = 0;
@@ -38,8 +38,6 @@ char	format_parser(const char *s, t_data *data)
 			data->hashflag = 1;
 		i++;
 	}
-	//if (s[i] == '%')
-	//	;
 	data->offset = i + 1;
-	return(s[i]);
+	return (s[i]);
 }
