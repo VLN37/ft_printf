@@ -1,8 +1,7 @@
 SRCS		= ft_itoa.c ft_itoa_base.c ft_printf.c ft_itoa_unsigned.c \
-              ft_itoa.c ft_printerf.c ft_strlen.c \
-              ft_itoa.c ft_toupper.c \
-
-LIB			= libft.a
+              ft_itoa.c ft_printerf.c ft_strlen.c ft_itoa.c ft_toupper.c \
+              ft_format_parser.c \
+#LIB			= libft.a
 CC			= clang
 NAME		= libftprintf.a
 AR			= ar
@@ -19,10 +18,7 @@ ${NAME}:	${OBJ}
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 run:
-			clang main.c libft.a libftprintf.a
-
-runmain:
-			clang ${SRCS} main.c libft.a && ./a.out
+			clang main.c ${SRCS} && ./a.out
 
 clean:
 			${RM} ${OBJ}

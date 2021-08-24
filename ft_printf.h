@@ -16,19 +16,17 @@ typedef struct s_data
 	void			*hex_ptr;
 	int				nbr;
 	unsigned int	unsig;
+	int				offset;
 	int				unsigflag;
+	int				spaceflag;
+	int				plusflag;
+	int				hashflag;
 }	t_data;
 
+//controller
 int		ft_printf(const char *s, ...);
-
-//helpers
-int		ft_toupper(int c);
-size_t	ft_strlen(const char *str);
-
-//converters
-char	*ft_itoa_unsigned(unsigned int nbr);
-char	*ft_itoa_base(unsigned long nbr, char *base_to, unsigned long basesize);
-char	*ft_itoa(int nbr);
+void	init_flags(t_data *data);
+char	format_parser(char *s, t_data *data);
 
 //printers
 int		print_string(char *str);
@@ -36,6 +34,15 @@ int		print_ptr_addrs(void *ptr);
 int		print_nbr(int nbr);
 int		print_unsigned(unsigned int nbr);
 int		print_unsigned_hex(unsigned int nbr, int unsigflag);
+
+//converters
+char	*ft_itoa_unsigned(unsigned int nbr);
+char	*ft_itoa_base(unsigned long nbr, char *base_to, unsigned long basesize);
+char	*ft_itoa(int nbr);
+
+//helpers
+int		ft_toupper(int c);
+size_t	ft_strlen(const char *str);
 
 // int		count_args(const char *s);
 // char	determine_type(const char *s, t_data *data);
