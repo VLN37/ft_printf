@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/23 22:52:51 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/24 00:13:33 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	print_string(char *str)
 {
 	size_t	i;
 
+	if (!str)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	i = 0;
 	i = ft_strlen(str);
 	write(1, str, i);
@@ -69,7 +74,7 @@ int	print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data)
 	if (unsigflag == 1)
 		while (str[++i])
 			str[i] = ft_toupper(str[i]);
-	if (data->hashflag)
+	if (data->hashflag && nbr != 0)
 	{
 		write(1, str, ft_strlen(str));
 		i = ft_strlen(str);

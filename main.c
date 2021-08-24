@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 20:20:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/23 23:10:00 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/23 23:42:13 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	main(void)
 	// printf("|%s |", "");
 	// ft_printf("|%s |", "");
 
-	printf("%x\n", -2147483648);
-	ft_printf("%x\n", -2147483648);
+	printf("%x\n", 0);
+	ft_printf("%x\n", 0);
 
 
 	// printf("%x", )
