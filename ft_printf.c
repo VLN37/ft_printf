@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:42:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 01:34:12 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/30 11:01:07 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ static void	call_conversion(t_data *data)
 	if (data->type == 'u')
 		data->len += print_unsigned(data->unsig);
 	if (data->type == 'x')
-		data->len += print_unsigned_hex(data->unsig, 0, data);
+		data->len += print_unsigned_hex(data->unsig, data);
 	if (data->type == 'X')
-		data->len += print_unsigned_hex(data->unsig, 1, data);
+		data->len += print_unsigned_hex(data->unsig, data);
 	if (data->type == '%')
 	{
 		data->len += 1;
