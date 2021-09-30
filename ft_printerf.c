@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 01:49:23 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/30 02:02:47 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	print_ptr_addrs(void *ptr)
 	unsigned long	i;
 
 	i = (unsigned long)ptr;
-	str = ft_utoa_base(i, "0123456789abcdef", 16);
+	str = ft_uitoa_base(i, "0123456789abcdef", 16);
 	if (!*str)
 	{
 		write(1, "0x0", 3);
@@ -68,7 +68,7 @@ int	print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data)
 	unsigned long	i;
 
 	i = -1;
-	str = ft_utoa_base((unsigned long)nbr, "0123456789abcdef", 16);
+	str = ft_uitoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 	if (data->hashflag && nbr != 0)
 	{
 		if (unsigflag)

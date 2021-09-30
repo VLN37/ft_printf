@@ -37,7 +37,7 @@ int		print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data);
 
 //converters
 char	*ft_uitoa(unsigned int nbr);
-char	*ft_utoa_base(unsigned long nbr, char *base_to, unsigned long basesize);
+char	*ft_uitoa_base(unsigned long nbr, char *base_to, unsigned long basesize);
 char	*ft_itoa(int nbr);
 
 //helpers
