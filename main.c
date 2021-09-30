@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 20:20:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/24 01:18:25 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/08/26 00:58:38 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,40 @@ int	main(void)
 	// // printf("UNSIGNED TO HEXA: %x\n", 1233454523);
 	// ft_printf("UNSIGNED TO HEXA: %X\n", 1233454523);
 	// printf("UNSIGNED TO HEXA: %X\n", 1233454523);
-	printf("% +d\n", 123123);
-	ft_printf("% +d\n", 123123);
-	printf("%      d\n", 123123);
-	ft_printf("%     d\n", 123123);
-	printf("%#x\n", 0);
-	ft_printf("%#x\n", 0);
-	printf("%#X\n", 0);
-	ft_printf("%#X\n", 0);
+	//printf("% +d\n", 123123);
+	// ft_printf("% +d\n", 123123);
+	// printf("%      d\n", 123123);
+	// ft_printf("%     d\n", 123123);
+	// printf("%#x\n", 0);
+	// ft_printf("%#x\n", 123);
+	// printf("%#X\n", 12344555);
+	// ft_printf("%#X\n", 0);
 
 	printf(" %s\n", "");
 	ft_printf(" %s\n", "");
 
 	// printf("|%s |", "");
 	// ft_printf("|%s |", "");
+	char *str = NULL;
+	// printf("% d\n",0);
+	// printf("%010d\n",12344);
+	// ft_printf("% i\n", 0);
 
-	printf("%x\n", 0);
-	ft_printf("%x\n", 0);
+	// printf("$%#015.9s\n", "hello");
+	// printf("$%#020.9p\n", &n);
+	printf("here $% 20.25d\n", 15);
+	printf("here $%15s\n", "hello");
+	// printf("$%#015.9i\n", 15);
+	// printf("$%#015.9u\n", 15);
+	// printf("$%#015.9x\n", 123123);
+
 
 
 	// printf("%x", )
 }
 
 //'C', 'A', 'R', 'A', 'L', 'H', 'O'
+// 0000000000000000002A
+
+//           000000000000FFFFFFFF
+// %[flags][width][.precision][length]specifier

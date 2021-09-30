@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/24 01:26:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/30 00:42:30 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	print_unsigned(unsigned int nbr, t_data *data)
 	char	*str;
 	int		i;
 
-	str = ft_itoa_unsigned(nbr);
+	str = ft_uitoa(nbr);
 	i = ft_strlen(str);
 	write(1, str, i);
 	free(str);

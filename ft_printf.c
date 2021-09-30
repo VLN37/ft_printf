@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:42:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/08/23 22:23:35 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/22 18:53:58 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,11 +128,8 @@ int	ft_printf(const char *s, ...)
 	{
 		init_flags(&data);
 		s += write_filler(s, &data);
-		if (*s == '%')
-		{
-			data.type = format_parser(s, &data);
-			s += data.offset;
-		}
+		data.type = format_parser(s, &data);
+		s += data.offset;
 		if (data.type != '%')
 			init_arg(&data, args);
 		call_conversion(&data);

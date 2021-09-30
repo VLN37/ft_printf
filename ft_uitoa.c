@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_unsigned.c                                 :+:      :+:    :+:   */
+/*   ft_uitoa.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -69,7 +69,7 @@ static void	unsigned_reverse_string(char *tab)
 	}
 }
 
-char	*ft_itoa_unsigned(unsigned int nbr)
+char	*ft_uitoa(unsigned int nbr)
 {
 	int		size_str;
 	int		sign;
