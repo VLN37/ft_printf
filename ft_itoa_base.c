@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:19 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 00:47:20 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/09/30 01:46:23 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,12 @@ static int	count_numbers(unsigned long nbr, int basesize)
 
 char	*ft_itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 {
-	int		sign;
 	int		i;
 	char	*res;
 	int		size_str;
 
 	size_str = count_numbers(nbr, basesize);
-	res = (char *)malloc(size_str + 3 * sizeof(char));
+	res = (char *)malloc((size_str + 1) * sizeof(char));
 	i = 0;
 	if (nbr == 0)
 		res[i++] = base_to[0];
@@ -62,9 +61,7 @@ char	*ft_itoa_base(unsigned long nbr, char *base_to, unsigned long basesize)
 		i++;
 		nbr = nbr / basesize;
 	}
-	res[i++] = 'x';
-	res[i++] = '0';
-	res[i++] = '\0';
+	res[i] = '\0';
 	ft_reverse_string(res);
 	return (res);
 }

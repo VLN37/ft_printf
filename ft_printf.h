@@ -32,7 +32,7 @@ char	format_parser(const char *s, t_data *data);
 int		print_string(char *str);
 int		print_ptr_addrs(void *ptr);
 int		print_nbr(int nbr, t_data *data);
-int		print_unsigned(unsigned int nbr, t_data *data);
+int		print_unsigned(unsigned int nbr);
 int		print_unsigned_hex(unsigned int nbr, int unsigflag, t_data *data);
 
 //converters
