@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 04:46:00 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 10:02:04 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 21:55:40 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	print_ptr_addrs(void *ptr)
 	unsigned long	i;
 
 	i = (unsigned long)ptr;
-	str = ft_uitoa_base(i, "0123456789abcdef", 16);
+	str = ftex_uitoa_base(i, "0123456789abcdef", 16);
 	if (!*str)
 	{
 		write(1, "0x0", 3);
@@ -55,7 +55,7 @@ int	print_unsigned(unsigned int nbr)
 	char	*str;
 	int		i;
 
-	str = ft_uitoa(nbr);
+	str = ftex_uitoa(nbr);
 	i = ft_strlen(str);
 	write(1, str, i);
 	free(str);

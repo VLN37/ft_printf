@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 09:48:33 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 10:01:50 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 21:56:45 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	print_unsigned_hex(unsigned int nbr, t_data *data)
 	unsigned long	i;
 
 	i = -1;
-	str = ft_uitoa_base((unsigned long)nbr, "0123456789abcdef", 16);
+	str = ftex_uitoa_base((unsigned long)nbr, "0123456789abcdef", 16);
 	if (data->hashflag && nbr != 0)
 		i = hash_flag_handler(str, data);
 	else
