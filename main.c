@@ -6,11 +6,12 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 20:20:22 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/22 21:44:15 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/22 22:02:12 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	main(void)
 {

@@ -1,10 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/22 22:01:17 by jofelipe          #+#    #+#             */
+/*   Updated: 2021/10/22 22:02:39 by jofelipe         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdio.h>
-# include <stdlib.h>
 # include <stdarg.h>
-# include <unistd.h>
 # include "libft.h"
 
 typedef struct s_data
@@ -13,11 +22,11 @@ typedef struct s_data
 	int				argc;
 	int				len;
 	char			ch;
+	int				nbr;
 	char			*str;
 	void			*hex_ptr;
-	int				nbr;
-	unsigned int	unsig;
 	int				offset;
+	unsigned int	unsig;
 	int				unsigflag;
 	int				spaceflag;
 	int				plusflag;
@@ -35,15 +44,6 @@ int		print_ptr_addrs(void *ptr);
 int		print_nbr(int nbr, t_data *data);
 int		print_unsigned(unsigned int nbr);
 int		print_unsigned_hex(unsigned int nbr, t_data *data);
-
-//converters
-char	*ft_uitoa(unsigned int nbr);
-char	*ft_uitoa_base(unsigned long nbr, char *base_to, unsigned long basesize);
-char	*ft_itoa(int nbr);
-
-//helpers
-int		ft_toupper(int c);
-size_t	ft_strlen(const char *str);
 
 // int		count_args(const char *s);
 // char	determine_type(const char *s, t_data *data);
