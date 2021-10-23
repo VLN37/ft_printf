@@ -5,6 +5,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+# include "libft.h"
 
 typedef struct s_data
 {
