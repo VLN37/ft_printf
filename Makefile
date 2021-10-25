@@ -1,35 +1,47 @@
-SRCS		= ft_printf.c  \
-              ft_printerf.c ft_format_parser.c \
+SRCFILES	= ft_printf.c  \
+			  ft_printerf.c \
+			  ft_format_parser.c \
 			  ft_printerf2.c
-#LIB			= libft.a
+
+SRCDIR		= src
+OBJDIR		= obj
 CC			= clang
 NAME		= libftprintf.a
 AR			= ar
 ARFLAGS		= rcs
+HEADER		= ft_printf.h
 
-OBJ			= ${SRCS:.c=.o}
+SRC			= $(addprefix $(SRCDIR)/, $(SRCFILES))
+OBJ			= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
-all:		${NAME}
+all:			mkdir $(NAME)
 
-${NAME}:	${OBJ}
+$(NAME):		$(OBJ) $(HEADER)
 			make -C ./libft
 			cp libft/libft.a libftprintf.a
-			${AR} ${ARFLAGS} ${NAME} ${OBJ}
+			$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-bonus:		${NAME}
+bonus:			$(NAME)
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ./libft
+# .c.o:
+# 			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I ./libft
+
+$(OBJDIR)/%.o:	$(SRCDIR)/%.c $(HEADER)
+			$(CC) $(CFLAGS) -c $< -o $@ -I./ -I./libft
 
 run:
 			clang main.c libftprintf.a -I./libft && ./a.out
 
 clean:
 			make -C ./libft clean
-			${RM} ${OBJ}
+			$(RM) $(OBJ)
+			rm -rf obj
 
 fclean:		clean
 			make -C ./libft fclean
-			${RM} ${NAME}
+			$(RM) $(NAME)
+
+mkdir:
+			mkdir -p obj
 
 re:			clean all
