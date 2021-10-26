@@ -1,6 +1,6 @@
 SRCFILES	= ft_printf.c  \
 			  ft_printerf.c \
-			  ft_format_parser.c \
+			  ft_printf_parser.c \
 			  ft_printerf2.c
 
 SRCDIR		= src

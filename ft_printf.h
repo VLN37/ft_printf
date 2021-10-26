@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 22:01:17 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/10/22 22:02:39 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/25 23:12:53 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_data
 //controller
 int		ft_printf(const char *s, ...);
 void	init_flags(t_data *data);
-char	format_parser(const char *s, t_data *data);
+char	printf_parser(const char *s, t_data *data);
 
 //printers
 int		print_string(char *str);

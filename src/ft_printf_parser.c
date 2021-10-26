@@ -6,7 +6,7 @@
 /*   By: jofelipe <jofelipe@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 12:50:16 by jofelipe          #+#    #+#             */
-/*   Updated: 2021/09/30 12:50:16 by jofelipe         ###   ########.fr       */
+/*   Updated: 2021/10/25 23:12:53 by jofelipe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_flags(t_data *data)
 	data->hashflag = 0;
 }
 
-char	format_parser(const char *s, t_data *data)
+char	printf_parser(const char *s, t_data *data)
 {
 	int	i;
 
