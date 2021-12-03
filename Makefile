@@ -5,7 +5,7 @@ SRCFILES	= ft_printf.c  \
 
 SRCDIR		= src
 OBJDIR		= obj
-CC			= clang
+CC			= gcc
 NAME		= libftprintf.a
 AR			= ar
 ARFLAGS		= rcs
